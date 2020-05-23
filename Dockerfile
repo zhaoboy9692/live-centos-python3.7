@@ -16,7 +16,7 @@ RUN yum install -y wget zlib-devel bzip2-devel openssl-devel openssl-static ncur
 RUN yum -y groupinstall "Development tools"  &&  wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz && tar xzf Python-3.7.2.tgz
 RUN cd Python-3.7.2 && ./configure --enable-optimizations && make altinstall
 RUN  yum install -y  openssl-devel zlib git
-RUN cd rtmpdump && make && make install
+RUN git clone git://git.ffmpeg.org/rtmpdump && cd rtmpdump && make && make install
 RUN python3.7 -m pip install python-librtmp==0.3.0 websockets==6.0 pyppeteer==0.2.2 -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 RUN pyppeteer-install
 #RUN pip3 install websockets==6.0 --force-reinstall -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
