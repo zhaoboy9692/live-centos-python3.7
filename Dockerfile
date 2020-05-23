@@ -49,7 +49,7 @@ RUN yum install -y wget && \
     yum install -y openssl && \
     yum clean all && \
     rm -rf /var/cache/yum/*
-RUN python3.7 -m pip install python-librtmp==0.3.0 websockets==6.0 pyppeteer==0.2.2 -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
-RUN   pyppeteer-install
+RUN python3 -m pip install python-librtmp==0.3.0 websockets==6.0 pyppeteer==0.2.2 -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+RUN pyppeteer-install
 #RUN pip3 install websockets==6.0 --force-reinstall -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 #CMD ['python3.7','run.py','monitor']
